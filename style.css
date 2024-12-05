@@ -1,48 +1,131 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 body {
-  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 }
 body a {
   text-decoration: none;
   color: inherit;
 }
-body * {
-  color: #333333;
-}
 body #App {
-  height: 100%;
-  background: linear-gradient(35deg, #bebecf, #d0cee4, #cce9e6, #c1e6e4);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
 }
 body #App #Header {
+  position: fixed;
+  height: 35px;
+  width: 100vw;
+  background-color: rgb(225, 234, 243);
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
+  font-size: small;
 }
 body #App #Header img {
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 40px;
+  padding-right: 20px;
 }
 body #App #Content {
-  padding: 10px;
+  flex: content;
+  margin: 8px;
+  padding: 6px;
+  overflow-y: scroll;
+  background: linear-gradient(15deg, rgba(155, 226, 248, 0.4), rgba(191, 238, 252, 0.4), rgba(212, 244, 247, 0.2666666667), rgba(209, 218, 217, 0.1333333333));
 }
-body #App #Content .Projects div {
-  width: fit-content;
+body #App #Content::-webkit-scrollbar {
+  width: 2px;
+  background-color: aqua;
+}
+body #App #Content::-webkit-scrollbar-thumb {
+  background-color: beige;
+}
+body #App #Content .Projects ul {
   padding: 20px;
-  border: #bebecf 2px solid;
-  border-radius: 8px;
+  background-color: white;
+  position: relative;
 }
-body #App #Content .Projects div p {
+body #App #Content .Projects ul::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 12px;
+  height: 86%;
+  width: 3px;
+  background-color: gray;
+}
+body #App #Content .Projects ul li {
+  background-color: #d7dadc;
+  padding: 5px;
+  width: fit-content;
+  margin: 6px;
+  border-radius: 3px;
+  list-style: none;
+}
+body #App #Content .Projects ul li::before {
+  content: ">";
+  margin-right: 5px;
+}
+body #App #Content .Projects .screenshots {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+}
+body #App #Content .Projects .screenshots img {
+  width: 40vw;
+}
+body #App #Content .Projects .details {
+  padding: 15px;
+}
+body #App #Content .Projects .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 25px;
+}
+body #App #Content .Projects .buttons button {
+  outline: none;
+  padding: 15px;
+  cursor: pointer;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: rgba(39, 132, 155, 0.75);
+  color: #ffffff;
+  border: none;
   font-size: large;
-  font-style: serif;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
-body #App #Content .Projects div ul {
-  font-family: "Source Code Pro", monospace;
+body #App #Content .Projects .buttons button img {
+  height: 20px;
+}
+body #App #Footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+body #App #Footer div {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+body #App #Footer div img {
+  height: 30px;
+  padding: 20px;
+  padding-top: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
